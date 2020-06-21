@@ -1,0 +1,73 @@
+//1. הלקוחות שהזמינו מוצרי Apple
+כדי לחבר את הטבלאות
+
+SELECT * FROM `24h.w`.customers AS customers
+INNER JOIN `24h.w`.products AS product
+ON product.id = customers.id;
+
+
+כדי לקבל את הלקוחות שהזמינו מוצרי  Apple
+
+SELECT name, id FROM products WHERE name LIKE 'Apple%'
+
+כדי לקבל את ה
+customers:name
+product:name
+
+SELECT customers.name,product.name FROM `24h.w`.customers AS customers
+INNER JOIN `24h.w`.products AS product
+ON product.id = customers.id;
+
+קיבלנו טבלה עם שם המזמין מול ההזמנה שלו
+
+
+
+
+
+//2.הלקוח שהזמין 2 מחשבים
+
+
+חיבור ההזמנות עם הלקוחות
+
+SELECT * FROM `24h.w`.orders AS orders
+INNER JOIN `24h.w`.customers AS customer
+ON orders.customer_id = customer_id;
+
+
+כדי לקבל את 
+orders:id
+customers:name
+
+SELECT orders.id,customer.name FROM `24h.w`.orders AS orders
+INNER JOIN `24h.w`.customers AS customer
+ON customer.id = orders.id;
+
+קיבלנו טבלה עם ה id של ההזמנה והשם של המזמין
+
+
+
+//3. כמה מוצרים הזמין כל לקוח 
+
+
+חיבור טבלת המוצרים עם הלקוחות
+
+SELECT * FROM `24h.w`.customers AS customers
+INNER JOIN `24h.w`.products AS product
+ON product.id = customers.id;
+
+
+//סינון" הטבלה לפי שם הלקוח ושם המוצר"
+
+SELECT customers.name,product.name FROM `24h.w`.customers AS customers
+INNER JOIN `24h.w`.products AS product
+ON product.id = customers.id;
+
+
+//4. ממוצע סכום ההזמנה
+
+
+ממוצע סכום כל הההזמנות
+
+SELECT AVG(price) FROM `24h.w`.customers AS customers
+INNER JOIN `24h.w`.products AS product
+ON product.id = customers.id;
